@@ -1,0 +1,112 @@
+@import url('../fonts/ostrich-sans/ostrich-sans.css');
+
+@font-face {font-family: "Simplifica";
+    src: url("../fonts/simplifica/simplifica.ttf") format("truetype");
+}
+
+body {
+	background-color: white;
+    font-family: 'Simplifica', "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Simplifica', "Helvetica Neue", Arial, sans-serif;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+a { 
+	color: black; 
+}
+
+a:hover {
+	color: #8a8a8a;
+}
+
+.menu { 
+	font-size: 1.2rem; 
+}
+
+.menu > li { 
+	font-size: 1.2rem; 
+}
+
+.menu > li.menu-text > a {
+	font-size: 2.0rem;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.top-bar, .top-bar ul {
+	background-color: white;
+}
+
+.callout {
+	border: none;
+}
+
+.callout.large {
+	padding: 3rem 3rem 2rem 3rem;
+}
+
+.callout.large h1 {
+	letter-spacing: 0.15rem;
+	text-transform: uppercase;
+}
+
+.blog-image {
+	height: 350px;
+	overflow: hidden;
+}
+
+.thumbnail {
+	border: none;
+	box-shadow: none;
+}
+
+.blog-tile {
+	display: block;
+	position: relative;
+}
+
+.blog-tile:hover {
+	color: black;
+}
+
+.blog-tile:hover .blog-meta {
+	opacity: 0.9;
+}
+
+.blog-meta {
+	padding: 10px 12px 15px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+    background: #fff;
+    opacity: 0.8;
+    text-align: left;
+}
+
+.blog-meta h4 {
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.blog-post p {
+	font-size: 1.4rem;
+}
+
+.site-footer {
+    line-height: 1.5;
+    width: 100%;
+    letter-spacing: 0.15rem;
+}
+
+.site-footer .design {
+	text-align: right;
+}
+
+
