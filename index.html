@@ -19,27 +19,40 @@
     </script>
   </head>
   <body>
-    
-    <!-- Start Top Bar -->
+
     <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text"><a href="index.html">THE MILLIE EFFECT</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about-mill.html">About Mill</a></li>
-        </ul>
+      <div class="top-bar-title">
+        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+          <button class="menu-icon dark" type="button" data-toggle></button>
+          <a href="https://www.instagram.com/themillieeffect/" target="_blank">
+            <span class="fa fa-instagram fa-lg"></span>
+          </a>
+        </span>
       </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li>
-            <a href="https://www.instagram.com/themillieeffect/" target="_blank">
-              <span class="fa fa-instagram fa-lg"></span>
-            </a>
-          </li>
-        </ul>
+      <div id="responsive-menu">
+        <div class="top-bar-left">
+          <ul class="menu vertical medium-horizontal">
+            <li class="menu-text show-for-medium" ><a href="index.html">The Millie Effect</a></li>
+            <li class="hide-for-medium" ><a href="index.html">The Millie Effect</a></li>
+            <li><a href="blog-fashion.html">Fashion</a></li>
+            <li><a href="blog-marketing.html">Marketing</a></li>
+            <li><a href="blog-skin-confidence.html">Skin Confidence</a></li>
+            <li><a href="about-mill.html">About Mill</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu vertical medium-horizontal">
+            <li>
+              <a class="hide-for-small-only" href="https://www.instagram.com/themillieeffect/" target="_blank">
+                <span class="fa fa-instagram fa-lg"></span>
+              </a>
+            </li>
+            <!-- <li><input class="search" type="search" placeholder="Search"></li> -->
+          </ul>
+        </div>
+ 
       </div>
     </div>
-    <!-- End Top Bar -->
 
     <div class="callout large">
       <div class="row column text-center">
@@ -50,6 +63,19 @@
     
     <!-- We can now combine rows and columns when there's only one column in that row -->
     <div class="row small-up-1 medium-up-3 large-up-3">
+    <div class="column">
+        <a class="blog-tile" href="blog-post-my-skin-story.html">
+          <img class="thumbnail" src="images/girl-in-sun-600-600.png"/>
+          <div class="blog-meta">
+            <div class="meta">
+              <span class="date">
+                <time itemprop="date">2nd March 2017</time>
+              </span>
+            </div>
+            <h4 class="title small-10" itemprop="name">My Skin Story</h4>
+          </div>
+        </a>
+      </div>
       <div class="column">
         <a class="blog-tile" href="blog-post-american-apparel.html">
           <img class="thumbnail" src="images/girl-leaning-600-600.png"/>
@@ -65,7 +91,7 @@
       </div>
 	    <div class="column">
 	    	<a class="blog-tile" href="blog-post-olsen-twins.html">
-          <img class="thumbnail" src="images/girl-in-sun-600-600.png"/>
+          <img class="thumbnail" src="images/olsen-twins.JPG"/>
           <div class="blog-meta">
             <div class="meta">
               <span class="date">
@@ -78,7 +104,7 @@
 	    </div>
 	    <div class="column">
         <a class="blog-tile" href="blog-post-next-step-marketing.html">
-          <img class="thumbnail" src="images/laptop-600-600.jpg"/>
+          <img class="thumbnail" src="images/laptop.JPG"/>
           <div class="blog-meta">
             <div class="meta">
               <span class="date">

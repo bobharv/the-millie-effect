@@ -22,21 +22,33 @@
     
     <!-- Start Top Bar -->
     <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text"><a href="index.html">THE MILLIE EFFECT</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about-mill.html">About Mill</a></li>
-        </ul>
+      <div class="top-bar-title">
+        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+          <button class="menu-icon dark" type="button" data-toggle></button>
+        </span>
       </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li>
-            <a href="https://www.instagram.com/themillieeffect/" target="_blank">
-              <span class="fa fa-instagram fa-lg"></span>
-            </a>
-          </li>
-        </ul>
+      <div id="responsive-menu">
+        <div class="top-bar-left">
+          <ul class="menu vertical medium-horizontal">
+            <li class="menu-text show-for-medium" ><a href="index.html">The Millie Effect</a></li>
+            <li class="hide-for-medium" ><a href="index.html">The Millie Effect</a></li>
+            <li><a href="blog-fashion.html">Fashion</a></li>
+            <li><a href="blog-marketing.html">Marketing</a></li>
+            <li><a href="blog-skin-confidence.html">Skin Confidence</a></li>
+            <li><a href="about-mill.html">About Mill</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu vertical medium-horizontal">
+            <li>
+              <a class="hide-for-small-only" href="https://www.instagram.com/themillieeffect/" target="_blank">
+                <span class="fa fa-instagram fa-lg"></span>
+              </a>
+            </li>
+            <!-- <li><input class="search" type="search" placeholder="Search"></li> -->
+          </ul>
+        </div>
+ 
       </div>
     </div>
     <!-- End Top Bar -->
