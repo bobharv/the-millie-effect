@@ -1,0 +1,18 @@
+<!-- We can now combine rows and columns when there's only one column in that row -->
+<div class="row small-up-1 medium-up-3 large-up-3">
+  {{#each articleTeasers}}
+  <div class="column">
+    <a class="blog-tile" href="{{articlePath}}">
+      <img class="thumbnail" src="{{homeTeaserImagePath}}"/>
+      <div class="blog-meta">
+        <div class="meta">
+          <span class="date">
+            <time itemprop="date">{{homeTeaserDate}}</time>
+          </span>
+        </div>
+        <h4 class="title small-10" itemprop="name">{{articleHeader}}</h4>
+      </div>
+    </a>
+  </div>
+  {{/each}}
+</div>

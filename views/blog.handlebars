@@ -1,0 +1,17 @@
+<div class="row medium-8 large-7 columns">
+
+  {{#each articleTeasers}}
+  <div class="blog-post">
+  <a class="blog-tile" href="{{articlePath}}">
+    <h2>{{articleHeader}} <small>{{articleDate}}</small></h2>
+    <div class="blog-image">
+      <img class="thumbnail" src="{{articleTeaserImagePath}}"/>
+    </div>
+    <div class="blog-snippet">
+      <p>{{articleSnippet}}</p>
+    </div>
+  </a>
+  </div>
+  {{/each}}
+
+</div>
