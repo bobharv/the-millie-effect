@@ -18,6 +18,15 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req,res){ 
     var articleTeasers = [
         {
+            'articlePath': '/article/this-works',
+            'articleHeader': 'This Works - Light Time Collection Review',
+            'articleDate': '13/3/2017',
+            'articleTeaserImagePath': '/images/this-works-wide.png',
+            'articleSnippet': 'When I was a teenager, I was always taught by my mother to take care of my skin. Eat the right foods, use the right skin care products and take your makeup off before bed...',
+            'homeTeaserDate': '13th March 2017',
+            'homeTeaserImagePath': '/images/this-works-wide.png'
+        },
+        {
             'articlePath': '/article/my-skin-story',
             'articleHeader': 'My Skin Story',
             'articleDate': '2/3/2017',
@@ -94,18 +103,18 @@ app.get('/blog/:name', function(req,res) {
             'header': 'Marketing',
             'articleTeasers': [
                 {
-                    'articlePath': '/article/next-step-marketing',
-                    'articleHeader': 'Next Step - Marketing!',
-                    'articleDate': '14/2/2017',
-                    'articleTeaserImagePath': '/images/laptop-wide.JPG',
-                    'articleSnippet': 'As a child you dreamt of a life where no one will have the right to tell you what to do, how to do it, and when to do it. Secretly, or not so secretly, that’s what we all want now right? Well, blogging can afford us such freedom and luxuries...'
-                },
-                {
                     'articlePath': '/article/american-apparel',
                     'articleHeader': 'Scandalous Advertising, Sex Scandals and Bankruptcy',
                     'articleDate': '16/2/2017',
                     'articleTeaserImagePath': '/images/girl-leaning.jpg',
                     'articleSnippet': 'Scandalous advertising campaigns, sex scandals and bankruptcy. Can you guess the brand I’m going to be discussing?'                
+                },
+                {
+                    'articlePath': '/article/next-step-marketing',
+                    'articleHeader': 'Next Step - Marketing!',
+                    'articleDate': '14/2/2017',
+                    'articleTeaserImagePath': '/images/laptop-wide.JPG',
+                    'articleSnippet': 'As a child you dreamt of a life where no one will have the right to tell you what to do, how to do it, and when to do it. Secretly, or not so secretly, that’s what we all want now right? Well, blogging can afford us such freedom and luxuries...'
                 }
             ]
         },
@@ -113,6 +122,13 @@ app.get('/blog/:name', function(req,res) {
             'title': 'The Millie Effect | Blog | Skin Confidence',
             'header': 'Skin Confidence',
             'articleTeasers': [
+                {
+                    'articlePath': '/article/this-works',
+                    'articleHeader': 'This Works - Light Time Collection Review',
+                    'articleDate': '13/3/2017',
+                    'articleTeaserImagePath': '/images/this-works.JPG',
+                    'articleSnippet': 'When I was a teenager, I was always taught by my mother to take care of my skin. Eat the right foods, use the right skin care products and take your makeup off before bed...'
+                },
                 {
                     'articlePath': '/article/my-skin-story',
                     'articleHeader': 'My Skin Story',
@@ -129,6 +145,14 @@ app.get('/blog/:name', function(req,res) {
 
 app.get('/article/:name', function(req,res) {
     var articles = {
+        'this-works': {
+            'tags': ['skin-confidence'],
+            'title': 'The Millie Effect | Article | This Works - Light Time Collection Review',
+            'header': 'This Works - Light Time Collection Review',
+            'subHeader': '13/3/2017',
+            'articleTopImagePath': '/images/this-works.JPG',
+            'articleContent': '<p>When I was a teenager, I was always taught by my mother to take care of my skin. Eat the right foods, use the right skin care products and take your makeup off before bed. It was drilled into me that you should do everything you can to keep your complexion looking fresh and healthy! However, once I started university and realised I wasn’t really going to have any money for the next 3 years I realised my skin care routine was going to have to take a more budget approach.</p> <p>I’ve never had bad skin luckily (apart from the eczema but that’s a whole different story) but now i am 25 I’m worried about the day my first big wrinkle makes an appearance. In the last couple of years I’ve really started thinking about the advice my mum gave me and made an effort to start using quality products with the most natural ingredients you can find. I’ve definitely had my fair share of products, some working better than others but I recently decided that maybe I should start using anti-wrinkle products. Surely it’s best to start fighting them sooner than later? I mean, what can you do once they have already appeared?</p> <p>First thing first, I did my research. I never go and buy a product without researching what is in it and looking at reviews. <i><b>A quick tip</b>, the best reviews to read are ones from <b>Amazon</b> as they are usually always truthful!</i></p> <p>I started looking into <a href=”http://www.thisworks.com/”>‘thisworks’</a> and found myself drawn to the company. The company was created by former Beauty Director of Vogue UK, Kathy Phillips. Kathy understands the link between lifestyle and skin health and wanted to create intelligent, targeted solutions that optimise skin performance 24 hours a day, based on the body clock. As a result of this, the products that thisworks deliver don’t have any unnecessary chemicals and replace sulphates, phalates, GMOs and parabens (all of which are massive eczema triggers!) with cleaner alternatives. Alongside this, they never test on animals and use organically grown plants whenever possible.</p> <p>Over the last 2 weeks I have been using This Works Light Time Cleanse & Glow, Light Time Skin Plumper and No Wrinkles Extreme Moisturiser.</p> <ul> <li><a href=”http://www.thisworks.com/light-time-cleanse-and-glow-75ml.html”>Light Time Cleanse & Glow.</a> This cleanser is more like a balm, very similar to Elizabeth Arden’s 8 Hour Cream. It is rich in Jojoba Oil and Vitamin C. You only need a tiny amount, apply to dry skin and massage over the face. Once massaged in, damp your fingers and gently massage the skin to activate the Vitamin C. Once I wash the cleanser off my face feels clean, moist and much brighter!</li> <li><a href=”http://www.thisworks.com/skincare/range/light-time/light-time-skin-plumper-30ml.html”>Light Time Skin Plumper.</a> This is the second step. The cream has a light texture and is packed with moisturising properties of Hyaluronic Acid and Persian Silk Tree. You just massage it into your skin and start to feel the cream lift and plump your skin ready for the day ahead! Since using the product my skin feels much smoother and brighter. I usually use this product just in the morning and use the No Wrinkles Extreme Moisturiser in the evening.</li> <li><a href=”http://www.thisworks.com/no-wrinkles-extreme-moisturiser.html#sthash.pDmUCLeA.dpbs”>No Wrinkles Extreme Moisturiser.</a> The cream is very light and full of Retinol to help minimise wrinkles. The cream gives me a beautiful dewy look and makes my skin feel moisturised instantly after massaging it into my skin. I haven’t actually noticed my lines disappearing but fortunately I am only 25 and don’t yet have any lines but my skin is a lot less dry and stays moisturised till the morning.</li> </ul> <p>Overall I have found the products brilliant. The reason why I bought these were because my skin was looking dull, dry and lacked a lot of energy. It really is starting to look a lot brighter, I can see my makeup sitting on my skin better and looking a lot more dewy (which is my preferred look!).</p> <p>Only downfall is I found the products hard to purchase in store. I did find them in boots but it was a very small selection so I would recommend buying online and getting it delivered.</p> <p>I am definitely going to be trying out the rest of the range and will keep you updated on what they are like!</p>'
+        },
         'my-skin-story': {
             'tags': ['skin-confidence'],
             'title': 'The Millie Effect | Article | My Skin Story',
