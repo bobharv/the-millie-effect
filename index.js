@@ -15,16 +15,30 @@ app.set('port', process.env.PORT || 3000);  //sets port 3000
 
 app.use(express.static(__dirname + '/public')); 
 
+app.get('/admin/home', function(req,res) {
+    res.render('admin-new-article', {
+        layout: 'admin',
+        title: 'Add a new blog article'
+    });
+});
+
+app.get('/admin/login', function(req,res) {
+    res.render('admin-login', {
+        layout: 'admin',
+        title: 'Login'
+    });
+});
+
 app.get('/', function(req,res){ 
     var articleTeasers = [
         {
             'articlePath': '/article/this-works',
             'articleHeader': 'This Works - Light Time Collection Review',
             'articleDate': '13/3/2017',
-            'articleTeaserImagePath': '/images/this-works-wide.png',
+            'articleTeaserImagePath': '/images/this-works-wide.JPG',
             'articleSnippet': 'When I was a teenager, I was always taught by my mother to take care of my skin. Eat the right foods, use the right skin care products and take your makeup off before bed...',
             'homeTeaserDate': '13th March 2017',
-            'homeTeaserImagePath': '/images/this-works-wide.png'
+            'homeTeaserImagePath': '/images/this-works.JPG'
         },
         {
             'articlePath': '/article/my-skin-story',
@@ -36,13 +50,13 @@ app.get('/', function(req,res){
             'homeTeaserImagePath': '/images/my-skin-story.JPG'
         },
         {
-            'articlePath': '/article/american-apparel',
+            'articlePath': '/article/scandalous-advertising',
             'articleHeader': 'Scandalous Advertising, Sex Scandals and Bankruptcy',
             'articleDate': '16/2/2017',
-            'articleTeaserImagePath': '/images/girl-leaning.jpg',
+            'articleTeaserImagePath': '/images/scandalous-advertising-wide.jpg',
             'articleSnippet': 'Scandalous advertising campaigns, sex scandals and bankruptcy. Can you guess the brand I’m going to be discussing?',           
             'homeTeaserDate': '16th February 2017',
-            'homeTeaserImagePath': '/images/girl-leaning-600-600.png'
+            'homeTeaserImagePath': '/images/scandalous-advertising.jpg'
         },
         {
             'articlePath': '/article/my-idol',
@@ -103,10 +117,10 @@ app.get('/blog/:name', function(req,res) {
             'header': 'Marketing',
             'articleTeasers': [
                 {
-                    'articlePath': '/article/american-apparel',
+                    'articlePath': '/article/scandalous-advertising',
                     'articleHeader': 'Scandalous Advertising, Sex Scandals and Bankruptcy',
                     'articleDate': '16/2/2017',
-                    'articleTeaserImagePath': '/images/girl-leaning.jpg',
+                    'articleTeaserImagePath': '/images/scandalous-advertising-wide.JPG',
                     'articleSnippet': 'Scandalous advertising campaigns, sex scandals and bankruptcy. Can you guess the brand I’m going to be discussing?'                
                 },
                 {
@@ -150,7 +164,7 @@ app.get('/article/:name', function(req,res) {
             'title': 'The Millie Effect | Article | This Works - Light Time Collection Review',
             'header': 'This Works - Light Time Collection Review',
             'subHeader': '13/3/2017',
-            'articleTopImagePath': '/images/this-works.JPG',
+            'articleTopImagePath': '/images/this-works-wide.JPG',
             'articleContent': '<p>When I was a teenager, I was always taught by my mother to take care of my skin. Eat the right foods, use the right skin care products and take your makeup off before bed. It was drilled into me that you should do everything you can to keep your complexion looking fresh and healthy! However, once I started university and realised I wasn’t really going to have any money for the next 3 years I realised my skin care routine was going to have to take a more budget approach.</p> <p>I’ve never had bad skin luckily (apart from the eczema but that’s a whole different story) but now i am 25 I’m worried about the day my first big wrinkle makes an appearance. In the last couple of years I’ve really started thinking about the advice my mum gave me and made an effort to start using quality products with the most natural ingredients you can find. I’ve definitely had my fair share of products, some working better than others but I recently decided that maybe I should start using anti-wrinkle products. Surely it’s best to start fighting them sooner than later? I mean, what can you do once they have already appeared?</p> <p>First thing first, I did my research. I never go and buy a product without researching what is in it and looking at reviews. <i><b>A quick tip</b>, the best reviews to read are ones from <b>Amazon</b> as they are usually always truthful!</i></p> <p>I started looking into <a href=”http://www.thisworks.com/”>‘thisworks’</a> and found myself drawn to the company. The company was created by former Beauty Director of Vogue UK, Kathy Phillips. Kathy understands the link between lifestyle and skin health and wanted to create intelligent, targeted solutions that optimise skin performance 24 hours a day, based on the body clock. As a result of this, the products that thisworks deliver don’t have any unnecessary chemicals and replace sulphates, phalates, GMOs and parabens (all of which are massive eczema triggers!) with cleaner alternatives. Alongside this, they never test on animals and use organically grown plants whenever possible.</p> <p>Over the last 2 weeks I have been using This Works Light Time Cleanse & Glow, Light Time Skin Plumper and No Wrinkles Extreme Moisturiser.</p> <ul> <li><a href=”http://www.thisworks.com/light-time-cleanse-and-glow-75ml.html”>Light Time Cleanse & Glow.</a> This cleanser is more like a balm, very similar to Elizabeth Arden’s 8 Hour Cream. It is rich in Jojoba Oil and Vitamin C. You only need a tiny amount, apply to dry skin and massage over the face. Once massaged in, damp your fingers and gently massage the skin to activate the Vitamin C. Once I wash the cleanser off my face feels clean, moist and much brighter!</li> <li><a href=”http://www.thisworks.com/skincare/range/light-time/light-time-skin-plumper-30ml.html”>Light Time Skin Plumper.</a> This is the second step. The cream has a light texture and is packed with moisturising properties of Hyaluronic Acid and Persian Silk Tree. You just massage it into your skin and start to feel the cream lift and plump your skin ready for the day ahead! Since using the product my skin feels much smoother and brighter. I usually use this product just in the morning and use the No Wrinkles Extreme Moisturiser in the evening.</li> <li><a href=”http://www.thisworks.com/no-wrinkles-extreme-moisturiser.html#sthash.pDmUCLeA.dpbs”>No Wrinkles Extreme Moisturiser.</a> The cream is very light and full of Retinol to help minimise wrinkles. The cream gives me a beautiful dewy look and makes my skin feel moisturised instantly after massaging it into my skin. I haven’t actually noticed my lines disappearing but fortunately I am only 25 and don’t yet have any lines but my skin is a lot less dry and stays moisturised till the morning.</li> </ul> <p>Overall I have found the products brilliant. The reason why I bought these were because my skin was looking dull, dry and lacked a lot of energy. It really is starting to look a lot brighter, I can see my makeup sitting on my skin better and looking a lot more dewy (which is my preferred look!).</p> <p>Only downfall is I found the products hard to purchase in store. I did find them in boots but it was a very small selection so I would recommend buying online and getting it delivered.</p> <p>I am definitely going to be trying out the rest of the range and will keep you updated on what they are like!</p>'
         },
         'my-skin-story': {
@@ -161,12 +175,12 @@ app.get('/article/:name', function(req,res) {
             'articleTopImagePath': '/images/my-skin-story-wide.JPG',
             'articleContent': '<p>I think skin is something most people take for granted, if you have good skin that is…</p> <p>Up until 2 years ago I never thought too much about my skin. I would once in awhile go through a phase where I wanted THE perfect skin to get rid of that ONE spot that popped up. I would look into what tablets I could take, what food I should be eating and the products I should be using but once the spot naturally disappeared the phase would end. </p> <p>I didn’t really need to worry about my skin - I rarely got spots, I never got acne, I wasn’t allergic to anything to cause rashes of inflammation. I was naturally skin lucky!</p> <p>2 years ago I developed a small patch of eczema on my shoulder, I bought some over the counter steroid cream and it seemed to go for a bit. It didn’t end there though, the eczema came back in full force and I soon had:</p> <ul> <li>3 patches on my back</li> <li>2 patches on my shoulders</li> <li>Under my armpit on both sides</li> <li>A small patch on my stomach</li> <li>Patches on the crease of my arms</li> </ul> <p>As you can imagine, it was quite devastating (yes it seems extreme) but I was embarrassed about having my arms out, I didn’t want to wear anything showing my back or shoulders and going on hot holidays filled me with dread! </p> <p>My initial research gave me the diagnostic that it was discoid eczema. Discoid eczema causes distinctive circular or oval patches of eczema. They can affect any part of the body but don’t usually affect the face or scalp. Take a look at this link to find out more about <a href="http://www.nhs.uk/conditions/Eczema-(discoid)/Pages/Introduction.aspx">discoid eczema.</a></p> <p>I was happy that I had finally found what eczema I had and was ready to read the solution to it.. But unfortunately nobody knows why you get discoid eczema and there is no treatment. Back to step 1.</p> <p>I went to the doctors and they prescribed me with steroid cream and moisturiser for extreme dry skin, both of these helped but I wanted the solution and not a quick fix. I asked them if they would do allergy tests for me but I was told that eczema isn’t affected by allergies and would be something I came into contact with. I had very strong doubts about this!! </p> <p>So, for the last 2 years I have been testing what could have caused my eczema and I tried taking out of my diet both <b>coffee</b> and <b>dairy</b>.</p> <p>Unfortunately these didn’t really help, having no dairy in my diet did make me feel slightly more energetic and healthier but my eczema stayed :( and I didn’t really drink enough coffee in the first place to consider it being the cause. </p> <p>But here is what I did discover: </p> <ul> <li><b>Tomatoes</b>: It seems tomatoes are one of the major causes of my eczema flare ups. It turns out that tomatoes and products containing tomato including tomato ketchup and spaghetti bolognese, are a huge threat as they are very rich sources of salicylates, amines and natural MSG. The three worst chemicals for triggering eczema.</li> <li><b>Washing Powder</b>: Even now if I sleep in somebody else’s bed covers which has been washed with Fairy and smells wonderful my eczema has a tantrum! I am a lover of my clothes smelling like flowers as they come out the wash but have succumbed to using eco-friendly washing powder.</li> <li><b>Doctors</b>: Doctors are not necessarily the best people to diagnose you! They are very reluctant to give allergy or patch testing and will try you with a number of different over the counter creams way before they even consider referring you to a dermatologist.</li> <li><b>Dermatologists</b>: Dermatologists are expensive! They will charge around £200 for a consultation and a further £300 for a patch test. I personally wasn’t willing to pay these prices until I have exhausted all other options! </li> <li><b>Steroid Cream</b>: It’s not a solution but it does help! I have never been a fan of using steroid cream but it has become my life saver. When I have a big flare up I put a very small amount on my eczema ONCE and it pretty much disappears within the day. <b>Please don’t continue using it though, it’s very powerful and can weaken the skin causing the eczema to become worse! </b></li> <li><b>Go natural</b>: Natural products are my new best friends. Whenever I pick up skin care products I always check the ingredients and use the rule: <i>if can’t read the word then it’s very likely to not be natural.</i></li> </ul> <p>So, my eczema is pretty much clearing itself up now! The patches on my back are gone, the patches under my arms are gone. The creases in my arms I still suffer with but they come and go and aren’t as red as they used to be! </p> <p>I am no longer worried about going on summer holidays and what I wear, skin confidence at last! </p> <p>Keep watching this space to find out more about how I tackled my eczema! </p>'
         },
-        'american-apparel': {
+        'scandalous-advertising': {
             'tags': ['marketing', 'fashion'],
             'title': 'The Millie Effect | Article | Scandalous Advertising, Sex Scandals and Bankruptcy',
             'header': 'Scandalous Advertising, Sex Scandals and Bankruptcy',
             'subHeader': '16/2/2017',
-            'articleTopImagePath': '/images/girl-leaning.jpg',
+            'articleTopImagePath': '/images/scandalous-advertising-wide.jpg',
             'articleContent': '<p>Scandalous advertising campaigns, sex scandals and bankruptcy. Can you guess the brand I’m going to be discussing?</p> <p>As a marketer and fashion enthusiast I am all for brands using guerilla marketing tactics. From YSL’s Jeanloup Sieff picking himself as the face of his perfume and posing for the photographer completely naked in 1971 (caused quite a stir back then!) to Gucci’s campaign when Tom Ford and Mario Testino creating images that were filled with references to fetishism. Model Carmen Cass showing off her pubic hair trimmed in the shape of a G was the last straw. The ad was banned everywhere.</p> <p>But one all-American company that took the marketing brand to a whole new level was American Apparel. The company has recently had to shut down it’s UK stores due to <a href="http://metro.co.uk/2016/12/23/all-but-one-of-american-apparels-uk-stores-will-close-for-good-this-christmas-6341827/">‘falling foul of tough trading’</a>.</p> <p>I find it quite surprising the company lasted so long with founder and CEO Dov Charney having oral sex with an employee in front of a female journalist, 4 female employees filing sexual harassment lawsuits against him and` his urge to walk through his factory in his underpants and conducts meetings wearing only a thong! </p> <p>Despite the constant scandals and way overpriced clothing, I have found myself not only purchasing numerous items of theirs (yes, I was obsessed with the disco pants like many young girls), but I have found myself in awe, wondering how a company with such negative connotations kept going for so long! </p> <p>The brand had a lot of damage control once Dov Charney was let go and worked overtime stop featuring women in provocative ads and instead they created a <a href="http://wwd.com/business-news/media/american-apparel-launches-pro-women-ad-campaign-10109919/">women-friendly ad</a>.</p> <p>Damage control within Marketing is something I am extremely interested in but unfortunately (or fortunately) I have never had to be involved in. The next few weeks I am going to be looking into American Apparel and their marketing tactics. </p> <p>Keep an eye out for them!!</p>'          
         },
         'my-idol': {
