@@ -32,6 +32,15 @@ app.get('/admin/login', function(req,res) {
 app.get('/', function(req,res){ 
     var articleTeasers = [
         {
+            'articlePath': '/article/my-stripe-obsession',
+            'articleHeader': 'My Stripe Obsession',
+            'articleDate': '20/3/2017',
+            'articleTeaserImagePath': '/images/my-stripe-obsession-wide.JPG',
+            'articleSnippet': 'It’s 2017 and it seems there is a new stripe trend that’s going to take over and I have taken apart in it. Looking at my recent clothing purchases I realised that this year I have already bought 4 striped items...',
+            'homeTeaserDate': '20th March 2017',
+            'homeTeaserImagePath': '/images/my-stripe-obsession.JPG'
+        },
+        {
             'articlePath': '/article/this-works',
             'articleHeader': 'This Works - Light Time Collection Review',
             'articleDate': '13/3/2017',
@@ -104,6 +113,13 @@ app.get('/blog/:name', function(req,res) {
             'header': 'Fashion',
             'articleTeasers': [
                 {
+                    'articlePath': '/article/my-stripe-obsession',
+                    'articleHeader': 'My Stripe Obsession',
+                    'articleDate': '20/3/2017',
+                    'articleTeaserImagePath': '/images/my-stripe-obsession-wide.JPG',
+                    'articleSnippet': 'It’s 2017 and it seems there is a new stripe trend that’s going to take over and I have taken apart in it. Looking at my recent clothing purchases I realised that this year I have already bought 4 striped items...'
+                },
+                {
                     'articlePath': '/article/my-idol',
                     'articleHeader': 'My Idol - Subverting the Modern Celebrity',
                     'articleDate': '15/2/2017',
@@ -159,6 +175,14 @@ app.get('/blog/:name', function(req,res) {
 
 app.get('/article/:name', function(req,res) {
     var articles = {
+        'my-stripe-obsession': {
+            'tags': ['fashion'],
+            'title': 'The Millie Effect | Article | My Stripe Obsession',
+            'header': 'My Stripe Obsession',
+            'subHeader': '20/3/2017',
+            'articleTopImagePath': '/images/my-stripe-obsession-wide.JPG',
+            'articleContent': '<p>It’s 2017 and it seems there is a new stripe trend that’s going to take over and I have taken apart in it. Looking at my recent clothing purchases I realised that this year I have already bought 4 striped items.</p> <p>Stripes never go out of fashion. They ruled the spring/summer 2016 runways and they are still evident now. They are no longer going in the traditional linear patterns but stripes are being seen in all sorts of directions now.</p> <p>Since starting my stripe fad I have realised that they are very versatile and can be worn to nearly an event! They are a staple for women’s office wear and have been for many years. A striped top paired with a good pair of jeans and some trainers are a good weekend and casual look or whack on a stripe jumpsuit and you are ready to hit the bars! </p> <p>However, it is always good to bare in mind what stripe you should choose to wear:</p> <p><b>Apple Shaped Bodies:</b> For a slimmer illusion around the torso, vertical lines are the winner if worn away from your mid-section.</p> <p><b>Hourglass Figure:</b> Stick to the basics. Your plus points are your curves which should be highlighter with single direction stripes. You can pick vertical or horizontal.</p> <p><b>Pear Shaped Bodies:</b> Stripes aren’t always the easiest to wear with this body shape but hope is not lost! Vertical lines will make the bottom appear slimmer and horizontal lines will create a fuller breast. Take your pick!</p> <p><b>Rectangle Bodies:</b> Want to look a little curvy? Try horizontal stripes to add some curves.</p> <p><b>Petite Bodies:</b> Try vertical stripes to lengthen your body.</p> <p>Remember, you can always add a little more glamour by throwing in some simple accessories.</p>'
+        },
         'this-works': {
             'tags': ['skin-confidence'],
             'title': 'The Millie Effect | Article | This Works - Light Time Collection Review',
