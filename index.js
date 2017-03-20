@@ -62,10 +62,10 @@ app.get('/', function(req,res){
             'articlePath': '/article/scandalous-advertising',
             'articleHeader': 'Scandalous Advertising, Sex Scandals and Bankruptcy',
             'articleDate': '16/2/2017',
-            'articleTeaserImagePath': '/images/scandalous-advertising-wide.jpg',
+            'articleTeaserImagePath': '/images/scandalous-advertising-wide.JPG',
             'articleSnippet': 'Scandalous advertising campaigns, sex scandals and bankruptcy. Can you guess the brand I’m going to be discussing?',           
             'homeTeaserDate': '16th February 2017',
-            'homeTeaserImagePath': '/images/scandalous-advertising.jpg'
+            'homeTeaserImagePath': '/images/scandalous-advertising.JPG'
         },
         {
             'articlePath': '/article/my-idol',
@@ -204,7 +204,7 @@ app.get('/article/:name', function(req,res) {
             'title': 'The Millie Effect | Article | Scandalous Advertising, Sex Scandals and Bankruptcy',
             'header': 'Scandalous Advertising, Sex Scandals and Bankruptcy',
             'subHeader': '16/2/2017',
-            'articleTopImagePath': '/images/scandalous-advertising-wide.jpg',
+            'articleTopImagePath': '/images/scandalous-advertising-wide.JPG',
             'articleContent': '<p>Scandalous advertising campaigns, sex scandals and bankruptcy. Can you guess the brand I’m going to be discussing?</p> <p>As a marketer and fashion enthusiast I am all for brands using guerilla marketing tactics. From YSL’s Jeanloup Sieff picking himself as the face of his perfume and posing for the photographer completely naked in 1971 (caused quite a stir back then!) to Gucci’s campaign when Tom Ford and Mario Testino creating images that were filled with references to fetishism. Model Carmen Cass showing off her pubic hair trimmed in the shape of a G was the last straw. The ad was banned everywhere.</p> <p>But one all-American company that took the marketing brand to a whole new level was American Apparel. The company has recently had to shut down it’s UK stores due to <a href="http://metro.co.uk/2016/12/23/all-but-one-of-american-apparels-uk-stores-will-close-for-good-this-christmas-6341827/">‘falling foul of tough trading’</a>.</p> <p>I find it quite surprising the company lasted so long with founder and CEO Dov Charney having oral sex with an employee in front of a female journalist, 4 female employees filing sexual harassment lawsuits against him and` his urge to walk through his factory in his underpants and conducts meetings wearing only a thong! </p> <p>Despite the constant scandals and way overpriced clothing, I have found myself not only purchasing numerous items of theirs (yes, I was obsessed with the disco pants like many young girls), but I have found myself in awe, wondering how a company with such negative connotations kept going for so long! </p> <p>The brand had a lot of damage control once Dov Charney was let go and worked overtime stop featuring women in provocative ads and instead they created a <a href="http://wwd.com/business-news/media/american-apparel-launches-pro-women-ad-campaign-10109919/">women-friendly ad</a>.</p> <p>Damage control within Marketing is something I am extremely interested in but unfortunately (or fortunately) I have never had to be involved in. The next few weeks I am going to be looking into American Apparel and their marketing tactics. </p> <p>Keep an eye out for them!!</p>'          
         },
         'my-idol': {
