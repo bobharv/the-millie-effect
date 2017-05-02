@@ -21,7 +21,7 @@ p {
 	font-size: 0.9rem;
 }
 
-.blog-post-content ul {
+.blog-post-content ul, .blog-post-content ol {
 	font-family: Arial, sans-serif;
 	font-size: 0.9rem;
 }

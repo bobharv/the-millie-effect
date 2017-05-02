@@ -32,6 +32,15 @@ app.get('/admin/login', function(req,res) {
 app.get('/', function(req,res){ 
     var articleTeasers = [
         {
+            'articlePath': '/article/short-hair-dont-care',
+            'articleHeader': "Short Hair Don't Care",
+            'articleDate': '3/4/2017',
+            'articleTeaserImagePath': '/images/short-hair-wide.JPG',
+            'articleSnippet': 'I have always been under the impression that; long hair is amazing. I should aspire to have long hair. When scrolling through my instagram recently I have been in awe of women such as Keira Knightley, Mollie King and Lucy Hale, beautiful women with hair no longer than their shoulders...',
+            'homeTeaserDate': '3rd April 2017',
+            'homeTeaserImagePath': '/images/short-hair.JPG'
+        },
+        {
             'articlePath': '/article/my-stripe-obsession',
             'articleHeader': 'My Stripe Obsession',
             'articleDate': '20/3/2017',
@@ -148,15 +157,22 @@ app.get('/blog/:name', function(req,res) {
                 }
             ]
         },
-        'skin-confidence': {
-            'title': 'The Millie Effect | Blog | Skin Confidence',
-            'header': 'Skin Confidence',
+        'beauty': {
+            'title': 'The Millie Effect | Blog | Beauty',
+            'header': 'Beauty',
             'articleTeasers': [
+                {
+                    'articlePath': '/article/short-hair-dont-care',
+                    'articleHeader': "Short Hair Don't Care",
+                    'articleDate': '3/4/2017',
+                    'articleTeaserImagePath': '/images/short-hair-wide.JPG',
+                    'articleSnippet': 'I have always been under the impression that; long hair is amazing. I should aspire to have long hair. When scrolling through my instagram recently I have been in awe of women such as Keira Knightley, Mollie King and Lucy Hale, beautiful women with hair no longer than their shoulders...'
+                },
                 {
                     'articlePath': '/article/this-works',
                     'articleHeader': 'This Works - Light Time Collection Review',
                     'articleDate': '13/3/2017',
-                    'articleTeaserImagePath': '/images/this-works.JPG',
+                    'articleTeaserImagePath': '/images/this-works-wide.JPG',
                     'articleSnippet': 'When I was a teenager, I was always taught by my mother to take care of my skin. Eat the right foods, use the right skin care products and take your makeup off before bed...'
                 },
                 {
@@ -175,6 +191,14 @@ app.get('/blog/:name', function(req,res) {
 
 app.get('/article/:name', function(req,res) {
     var articles = {
+        'short-hair-dont-care': {
+            'tags': ['beauty'],
+            'title': "The Millie Effect | Article | Short Hair Don't Care",
+            'header': "Short Hair Don't Care",
+            'subHeader': '3/4/2017',
+            'articleTopImagePath': '/images/short-hair-wide.JPG',
+            'articleContent': '<p>I have always been under the impression that; long hair is amazing. I should aspire to have long hair. </p> <p>When scrolling through my instagram recently I have been in awe of women such as Keira Knightley, Mollie King and Lucy Hale, beautiful women with hair no longer than their shoulders. </p> <p>So I finally took the plunge (and yes it was scary, and yes there were a few tears). The day started well, I went to the hairdressers and told them exactly what I wanted “a long bob (LOB) no shorter than my collarbone, if you dry it wavy but not curly that would be great!”. She seemed to have a complete understanding of what I wanted and I was imagining myself walking out of the salon looking exactly like Keira Knightley. </p> <p>But, as all you girls probably know: hairdressers are not where dreams are made but where tears are made. </p> <p>My hair was shorter than I had asked for and I looked like a poodle (sorry I didn’t leave it long enough to take photos!) but after a few tears, a shower and purchasing a hair wand I am now happy! I would like it to grow a little longer but luckily for me my hair doesn’t take long to gain a few inches. </p> <p>So, here are a few reasons you might be ready to take the plunge. <ol> <li> <b> You have thick roots and top hair but your ends are thinner. </b>This is pretty common and by getting a LOB you will cut your hair at the thickest points therefore your hair will appear thicker from roots to ends! Tip: if you have really thick hair (like me) ask the hairdresser to thin it out and add a long layer so you don’t have a triangle hairstyle! </li> <li> <b> Your hair feels lifeless, flat and like it just sits on your head. </b>This was my main reason for getting the chop. When I looked in the mirror I thought ‘long hair does absolutely nothing for me’. Going shorter has given my hair more volume and I feel like I have an actual style. </li> <li> <b> You are looking for a more edgy style.</b> Long hair makes me think ‘glamourous’ when, if being realistic, my style is much more casual and slightly grungy. I prefer putting on some baggy jeans and a baggy shirt and I think the short hair reflects this look more. But, it can also look very glamourous when needed. </li> <li> <b> You have trouble style your own hair.</b> I am the first culprit of making myself look like a poodle then a wavy beach babe. Short hair is much easier to style, it’s easier to manage on a day to day basis and much easier to get to grips with the curling tongs. </li> <li> <b> You can see split and frazzled ends to your hair.</b> If this is the case, then it’s time for the chop girls! Your hair may be long but it’s not healthy and the only remedy to split ends is having a trim, so why not bite the bullet and get the LOB .. with the choppy layers you know it’s going to look good for at least the next 3 months! </li> </p>'
+        },
         'my-stripe-obsession': {
             'tags': ['fashion'],
             'title': 'The Millie Effect | Article | My Stripe Obsession',
@@ -184,7 +208,7 @@ app.get('/article/:name', function(req,res) {
             'articleContent': '<p>It’s 2017 and it seems there is a new stripe trend that’s going to take over and I have taken apart in it. Looking at my recent clothing purchases I realised that this year I have already bought 4 striped items.</p> <p>Stripes never go out of fashion. They ruled the spring/summer 2016 runways and they are still evident now. They are no longer going in the traditional linear patterns but stripes are being seen in all sorts of directions now.</p> <p>Since starting my stripe fad I have realised that they are very versatile and can be worn to nearly an event! They are a staple for women’s office wear and have been for many years. A striped top paired with a good pair of jeans and some trainers are a good weekend and casual look or whack on a stripe jumpsuit and you are ready to hit the bars! </p> <p>However, it is always good to bare in mind what stripe you should choose to wear:</p> <p><b>Apple Shaped Bodies:</b> For a slimmer illusion around the torso, vertical lines are the winner if worn away from your mid-section.</p> <p><b>Hourglass Figure:</b> Stick to the basics. Your plus points are your curves which should be highlighter with single direction stripes. You can pick vertical or horizontal.</p> <p><b>Pear Shaped Bodies:</b> Stripes aren’t always the easiest to wear with this body shape but hope is not lost! Vertical lines will make the bottom appear slimmer and horizontal lines will create a fuller breast. Take your pick!</p> <p><b>Rectangle Bodies:</b> Want to look a little curvy? Try horizontal stripes to add some curves.</p> <p><b>Petite Bodies:</b> Try vertical stripes to lengthen your body.</p> <p>Remember, you can always add a little more glamour by throwing in some simple accessories.</p>'
         },
         'this-works': {
-            'tags': ['skin-confidence'],
+            'tags': ['beauty'],
             'title': 'The Millie Effect | Article | This Works - Light Time Collection Review',
             'header': 'This Works - Light Time Collection Review',
             'subHeader': '13/3/2017',
@@ -192,7 +216,7 @@ app.get('/article/:name', function(req,res) {
             'articleContent': '<p>When I was a teenager, I was always taught by my mother to take care of my skin. Eat the right foods, use the right skin care products and take your makeup off before bed. It was drilled into me that you should do everything you can to keep your complexion looking fresh and healthy! However, once I started university and realised I wasn’t really going to have any money for the next 3 years I realised my skin care routine was going to have to take a more budget approach.</p> <p>I’ve never had bad skin luckily (apart from the eczema but that’s a whole different story) but now i am 25 I’m worried about the day my first big wrinkle makes an appearance. In the last couple of years I’ve really started thinking about the advice my mum gave me and made an effort to start using quality products with the most natural ingredients you can find. I’ve definitely had my fair share of products, some working better than others but I recently decided that maybe I should start using anti-wrinkle products. Surely it’s best to start fighting them sooner than later? I mean, what can you do once they have already appeared?</p> <p>First thing first, I did my research. I never go and buy a product without researching what is in it and looking at reviews. <i><b>A quick tip</b>, the best reviews to read are ones from <b>Amazon</b> as they are usually always truthful!</i></p> <p>I started looking into <a href=”http://www.thisworks.com/”>‘thisworks’</a> and found myself drawn to the company. The company was created by former Beauty Director of Vogue UK, Kathy Phillips. Kathy understands the link between lifestyle and skin health and wanted to create intelligent, targeted solutions that optimise skin performance 24 hours a day, based on the body clock. As a result of this, the products that thisworks deliver don’t have any unnecessary chemicals and replace sulphates, phalates, GMOs and parabens (all of which are massive eczema triggers!) with cleaner alternatives. Alongside this, they never test on animals and use organically grown plants whenever possible.</p> <p>Over the last 2 weeks I have been using This Works Light Time Cleanse & Glow, Light Time Skin Plumper and No Wrinkles Extreme Moisturiser.</p> <ul> <li><a href=”http://www.thisworks.com/light-time-cleanse-and-glow-75ml.html”>Light Time Cleanse & Glow.</a> This cleanser is more like a balm, very similar to Elizabeth Arden’s 8 Hour Cream. It is rich in Jojoba Oil and Vitamin C. You only need a tiny amount, apply to dry skin and massage over the face. Once massaged in, damp your fingers and gently massage the skin to activate the Vitamin C. Once I wash the cleanser off my face feels clean, moist and much brighter!</li> <li><a href=”http://www.thisworks.com/skincare/range/light-time/light-time-skin-plumper-30ml.html”>Light Time Skin Plumper.</a> This is the second step. The cream has a light texture and is packed with moisturising properties of Hyaluronic Acid and Persian Silk Tree. You just massage it into your skin and start to feel the cream lift and plump your skin ready for the day ahead! Since using the product my skin feels much smoother and brighter. I usually use this product just in the morning and use the No Wrinkles Extreme Moisturiser in the evening.</li> <li><a href=”http://www.thisworks.com/no-wrinkles-extreme-moisturiser.html#sthash.pDmUCLeA.dpbs”>No Wrinkles Extreme Moisturiser.</a> The cream is very light and full of Retinol to help minimise wrinkles. The cream gives me a beautiful dewy look and makes my skin feel moisturised instantly after massaging it into my skin. I haven’t actually noticed my lines disappearing but fortunately I am only 25 and don’t yet have any lines but my skin is a lot less dry and stays moisturised till the morning.</li> </ul> <p>Overall I have found the products brilliant. The reason why I bought these were because my skin was looking dull, dry and lacked a lot of energy. It really is starting to look a lot brighter, I can see my makeup sitting on my skin better and looking a lot more dewy (which is my preferred look!).</p> <p>Only downfall is I found the products hard to purchase in store. I did find them in boots but it was a very small selection so I would recommend buying online and getting it delivered.</p> <p>I am definitely going to be trying out the rest of the range and will keep you updated on what they are like!</p>'
         },
         'my-skin-story': {
-            'tags': ['skin-confidence'],
+            'tags': ['beauty'],
             'title': 'The Millie Effect | Article | My Skin Story',
             'header': 'My Skin Story',
             'subHeader': '2/3/2017',
