@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/bobharv/the-millie-effect#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "express3-handlebars": "^0.5.2"
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.1-security",
+    "morgan": "^1.8.1"
   }
 }
