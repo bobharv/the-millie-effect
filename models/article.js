@@ -4,13 +4,15 @@ var stringHelper = require('../helpers/stringHelper');
 var articlesDir = "./files/articles/";
 
 // Create new comment in your database and return its id
-exports.create = function(articleData, user) {
+exports.create = function(articleData) {
 
   var article = {
     id: generateId(articleData.title),
     articleHeader: articleData.title,
     articleDate: articleData.date,
+    articleTeaserDate: "",
     articleBody: articleData.body,
+    articleSnippet: "",
     articleMainImage: articleData.mainImage,
     articleTeaserImage: articleData.teaserImage
   }
@@ -59,6 +61,16 @@ exports.all = function(cb) {
     
   });
   
+}
+
+// Get article path
+exports.getPath = function(article) {
+    return "/article" + article.id;
+}
+
+// Get article path by id 
+exports.getPathById = function(articleId) {
+    return "/article" + articleId;
 }
 
 var generateId = function(articleTitle) {
