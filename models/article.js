@@ -1,34 +1,62 @@
 var fs = require('fs');
+var sanitizer = require('../helpers/sanitizer');
 var stringHelper = require('../helpers/stringHelper');
 
 var articlesDir = "./files/articles/";
 
 // Create new comment in your database and return its id
 exports.create = function(articleData) {
+  return new Promise((resolve, reject) => {
 
-  var article = {
-    id: generateId(articleData.title),
-    articleHeader: articleData.title,
-    articleDate: articleData.date,
-    articleTeaserDate: "",
-    articleBody: articleData.body,
-    articleSnippet: "",
-    articleMainImage: articleData.mainImage,
-    articleTeaserImage: articleData.teaserImage
-  }
+    articleData = sanitizer.sanitizeObject(articleData);
 
-  var fileName = article.id + ".js";
+    var dataManipulationPromises = [
+      generateId(articleData.title),
+      generatePageTitle(articleData.title),
+      generateArticleDatePretty(articleData.date),
+      generateArticleTeaserContent(articleData.content)
+    ];
 
-  fs.writeFile(articlesDir + fileName, article, 'utf8', (err) => {
-    if (err) throw err;
+    Promise.all(dataManipulationPromises)
+      .then(data => {
+        console.log("models/article.js -- Data manipulation success: ", data);
 
-    console.log(fileName + ' has been saved', article);
+        var article = {
+          "id": data[0],
+          "pageTitle": data[1],
+          "title": articleData.title,
+          "articleDate": articleData.date,
+          "articleDatePretty": data[2],
+          "articleContent": articleData.content,
+          "articleTeaserContent": data[3],
+          "articleMainImage": articleData.mainImage,
+          "articleTeaserImage": articleData.teaserImage,
+          "tags": articleData.tags
+        }
+
+        var fileName = article.id + ".json";
+
+        console.log("models/article.js -- Writing article to disk: ", articleData.title);
+        console.log("models/article.js -- Writing article to disk: ", article);
+      
+        fs.writeFile(articlesDir + fileName, article, 'utf8', (err) => {
+          if (err) throw err;
+          console.log("models/article.js -- Completing writing article to disk: ", articleData.title);
+          resolve(article);
+        });
+
+      })
+      .catch(reason => {
+        console.log("models/article.js -- Failed to create article because reasons: ", reason);
+        reject(reason);
+    });
+  
   });
+
 }
 
 // Get a particular comment
 exports.get = function(article, cb) {
-
   var fileName = article.id + ".js";
 
   fs.readFile(articlesDir + fileName, 'utf8', (err, article) => {
@@ -41,16 +69,15 @@ exports.get = function(article, cb) {
 
 // Get all comments
 exports.all = function(cb) {
-
   var articles = [];
 
   // Loop through all the files in the articles directory
-  fs.readdir(articlesDir, function( err, files ) {
+  fs.readdir(articlesDir, function(err, files) {
     if( err ) {
       console.error( "Could not list the directory: " + articlesDir, err );
     } 
 
-    files.forEach( function( fileName, index ) {
+    files.forEach( function(fileName, index) {
 
       var jsonFile = require('.' + articlesDir + fileName);
       articles.push(jsonFile);
@@ -66,25 +93,72 @@ exports.all = function(cb) {
 // Get article path
 exports.getPath = function(article) {
     return "/article" + article.id;
-}
+};
 
 // Get article path by id 
 exports.getPathById = function(articleId) {
     return "/article" + articleId;
-}
+};
 
 var generateId = function(articleTitle) {
-  var hyphenatedTitle = stringHelper.toHyphenated(articleTitle);
+  return new Promise((resolve, reject) => {
 
-  fs.readdir( articlesDir, function( err, files ) {
-    if( err ) {
-      console.error( "Could not list the directory: " + articlesDir, err );
-    } 
+    var hyphenatedTitle = stringHelper.toHyphenated(articleTitle);
 
-    files.forEach( function( file, index ) {
-      // check if any of the names match the hyphenatedTitle
+    fs.readdir(articlesDir, function(err, files) {
+      if(err) {
+        console.error("Could not list the directory: " + articlesDir, err);
+        reject(err);
+      } 
+
+      var fileExists = false;
+
+      files.forEach(function(fileName, index) {
+
+        if ((hyphenatedTitle + ".json") == fileName) {
+          fileExists = true;
+        }
+
+      });
+
+      if (!fileExists) {
+        resolve(hyphenatedTitle);
+      } else {
+        reject(hyphenatedTitle + ".json already exists");
+      }
+
     });
   });
+};
 
-  return hyphenatedTitle;
+var generatePageTitle = function(articleTitle) {
+  return  new Promise((resolve, reject) => {
+    if (articleTitle) {
+      resolve("The Millie Effect | Article | " + articleTitle);
+    } else {
+      reject("articleTitle was not specified");
+    }
+  });
+};
+
+var generateArticleDatePretty = function(articleDate) {
+  return new Promise((resolve, reject) => {
+    if (articleDate) {
+      var date = new Date(articleDate).toISOString();
+      console.log("Date:", date);
+      resolve(articleDate);
+    } else {
+      reject(articleDate);
+    }
+  });
+};
+
+var generateArticleTeaserContent = function(articleContent) {
+  return new Promise((resolve, reject) => {
+    if (articleContent) {
+      resolve(articleContent);
+    } else {
+      reject(articleContent);
+    }
+  });
 };

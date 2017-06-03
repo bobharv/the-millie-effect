@@ -1,0 +1,34 @@
+// {
+//    "articlePath": "/article/my-idol",
+//    "articleHeader": "My Idol - Subverting the Modern Celebrity",
+//    "articleDate": "15/2/2017",
+//    "articleTeaserImagePath": "/images/my-idol-wide.JPG",
+//    "articleSnippet": "Growing up in the 90’s as a little girl meant it was inevitable that The Olsen twins were going to be apart of my life at some point. I predominantly remember sitting with my older sister watching Mary-Kate and Ashley: Sweet Sixteen - Licensed to drive, hoping that my ‘sweet sixteen’ would involve driving to Utah for the winter olympics too. I soon realised this what a somewhat unrealistic expectation...",
+//    "homeTeaserDate": "15th February 2017",
+//    "homeTeaserImagePath": "/images/my-idol.JPG"
+// },
+
+"my-idol-": {
+    // "articlePath": "/article/my-idol", //generate this
+    // "pageTitle": "The Millie Effect | Article | My Idol - Subverting the Modern Celebrity", //generate this
+    "title": "My Idol - Subverting the Modern Celebrity",
+    "articleDate": "15/2/2017",
+    // "articleDatePretty": "15th February 2017", //generate this
+    "articleImagePath": "/images/my-idol-wide.JPG",
+    "articleTeaserImagePath": "/images/my-idol.JPG",
+    "articleContent": "<p>Growing up in the 90’s as a little girl meant it was inevitable that The Olsen twins were going to be apart of my life at some point. I predominantly remember sitting with my older sister watching Mary-Kate and Ashley: Sweet Sixteen - Licensed to drive, hoping that my ‘sweet sixteen’ would involve driving to Utah for the winter olympics too. I soon realised this what a somewhat unrealistic expectation. </p> <p>Since their days of acting the sisters have opted for feigned anonymity, posing for the occasional red carpet snap, but otherwise choosing to keep their lives as private as possible. This hasn’t stopped them from being the most famous twins in the world. </p> <p>So, apart from the fact they have become forces to be reckoned with in the fashion industry, what makes Mary-Kate & Ashley my icons?</p> <p>The twins subvert the ‘modern day celebrity culture’. They don’t announce their personal lives over social media channels, their faces and names aren’t plastered all over their brands, and they didn’t become fashion icons to get their name into the press (let’s face it, there was no need!). </p> <p>Ashley Olsen told The New York Times in 2009 that, 'I decided at 18 that I didn’t want to be in the entertainment industry anymore. I wanted to explore other things, and with that came The Row. Our lives have been king of backward. We never got the opportunity in high school to figure out what we want to do. We never had time to discover, ‘Oh, I love doing this…’ so the experience in Fashion has been amazing.' <a href='http://www.nytimes.com/2009/08/27/fashion/27olsens.html'>http://www.nytimes.com/2009/08/27/fashion/27olsens.html</a></p>",
+    // "articleTeaserContent": "Growing up in the 90’s as a little girl meant it was inevitable that The Olsen twins were going to be apart of my life at some point. I predominantly remember sitting with my older sister watching Mary-Kate and Ashley: Sweet Sixteen - Licensed to drive, hoping that my ‘sweet sixteen’ would involve driving to Utah for the winter olympics too. I soon realised this what a somewhat unrealistic expectation...", //generate this
+	"tags": ["marketing", "fashion"]
+},
+
+    "id": generateId(articleData.title),
+	"articlePath": 
+	"pageTitle": generatePageTitle(articleData.title);
+    "title": articleData.title,
+    "articleDate": articleData.date,
+    "articleDatePretty": generateArticleDatePretty(articleData.date),
+    "articleContent": articleData.content,
+    "articleTeaserContent": generateArticleTeaserContent(articleData.content),
+    "articleMainImage": articleData.mainImage,
+    "articleTeaserImage": articleData.teaserImage,
+    "tags": articleData.tags

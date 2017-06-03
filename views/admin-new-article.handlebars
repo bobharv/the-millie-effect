@@ -1,3 +1,5 @@
+<script src="//cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
+
 <div class="row">
   <div class="medium-10 medium-centered large-8 large-centered columns">
 
@@ -5,13 +7,19 @@
       <div class="new-article-form">
         <h4 class="text-center">Add a new blog article</h4>
         <label>Title
-          <input type="text" name="title" placeholder="Article Title">
+          <input class="date-picker" type="text" name="title" placeholder="Article Title">
         </label>
         <label>Date
           <input type="text" name="date" placeholder="DD/MM/YYYY">
         </label>
         <label>HTML Body Content
-          <input type="text" name="content" placeholder="Paste HTML Here">
+          {{!-- <input id="bodyContent" type="textarea" name="content" placeholder="Paste HTML Here"> --}}
+          <textarea name="content" id="content" rows="10" cols="80"></textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content' );
+            </script>
         </label>
         <label>Homepage 'Teaser' Image
           <input type="file" name="teaserImage">
